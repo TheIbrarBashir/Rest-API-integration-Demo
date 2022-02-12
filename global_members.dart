@@ -1,0 +1,31 @@
+import 'package:dio/dio.dart';
+
+Function? rebuildChatRoomPage;
+
+Map<String, dynamic>? token;
+Future<List<dynamic>> teamList = [] as Future<List>;
+List<dynamic> perPageTeamList = [];
+Future<List<dynamic>> notificationList = [] as Future<List>;
+Future<List<dynamic>> teamMembersList = [] as Future<List>;
+Future<List<dynamic>> upComingMatchList = [] as Future<List>;
+Future<List<dynamic>> pastMatchList = [] as Future<List>;
+Future<List<dynamic>> teamUpComingMatchList = [] as Future<List>;
+Future<List<dynamic>> teamPastMatchList = [] as Future<List>;
+Future<List<dynamic>> chatRoomList = [] as Future<List>;
+Future<List<dynamic>> chatList = [] as Future<List>;
+Map<String, dynamic> myProfileDataMap = <String, dynamic>{};
+bool isTeamListLoaded = false;
+bool isChatRoomListLoaded = false;
+bool isTeamMemberListLoaded = false;
+bool isNotificationListLoaded = false;
+bool isUpComingMatchListLoaded = false;
+bool isPastMatchListLoaded = false;
+bool isTeamUpComingMatchListLoaded = false;
+bool isTeamPastMatchListLoaded = false;
+bool isMyProfileDataLoaded = false;
+int currentTeamIndex = 0;
+int teamMemberId = 0;
+String chatRoomName = '';
+String chatRoomUUID = '';
+String myUUID = '';
+Dio dio = Dio(BaseOptions(baseUrl: 'API Base URl'));
